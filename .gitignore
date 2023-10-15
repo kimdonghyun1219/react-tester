@@ -1,0 +1,12 @@
+# dependencies
+node_modules
+
+
+# IDE
+.idea
+.DS_Store
+
+# ENV
+.env
+.env.local
+.env.production
