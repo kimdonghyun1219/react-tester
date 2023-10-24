@@ -875,7 +875,7 @@
     lz-string "^1.5.0"
     pretty-format "^27.0.2"
 
-"@testing-library/jest-dom@^6.1.4":
+"@testing-library/jest-dom@*":
   version "6.1.4"
   resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-6.1.4.tgz#cf0835c33bc5ef00befb9e672b1e3e6a710e30e3"
   integrity sha512-wpoYrCYwSZ5/AxcrjLxJmCU6I5QAJXslEeSiMQqaWmP2Kzpd1LvF/qxmAIW2qposULGWq2gw30GgVNFLSc2Jnw==
@@ -888,6 +888,14 @@
     dom-accessibility-api "^0.5.6"
     lodash "^4.17.15"
     redent "^3.0.0"
+
+"@testing-library/react-hooks@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-8.0.1.tgz#0924bbd5b55e0c0c0502d1754657ada66947ca12"
+  integrity sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    react-error-boundary "^3.1.0"
 
 "@testing-library/react@^14.0.0":
   version "14.0.0"
@@ -1056,6 +1064,13 @@
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
+
+"@types/testing-library__jest-dom@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/testing-library__jest-dom/-/testing-library__jest-dom-6.0.0.tgz#b558b64b80a72130714be1f505c6df482d453690"
+  integrity sha512-bnreXCgus6IIadyHNlN/oI5FfX4dWgvGhOPvpr7zzCYDGAPIfvyIoAozMBINmhmsVuqV0cncejF2y5KC7ScqOg==
+  dependencies:
+    "@testing-library/jest-dom" "*"
 
 "@types/tough-cookie@*":
   version "4.0.3"
@@ -4044,6 +4059,13 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-error-boundary@^3.1.0:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/react-error-boundary/-/react-error-boundary-3.1.4.tgz#255db92b23197108757a888b01e5b729919abde0"
+  integrity sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 react-is@^16.13.1:
   version "16.13.1"
