@@ -1,30 +1,27 @@
-import { render, screen } from "@testing-library/react";
-import Counter from "./index.tsx";
-
-/**
- *  Counter 컴포넌트에 주입할 props
- */
-const CounterProps = {
-  count: 0,
-  onIncrease: jest.fn(),
-  onDecrease: jest.fn(),
-};
+import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+import Counter from './index.tsx';
 
 describe('<Counter />', () => {
-  test('화면에 텍스트가 보이는지', () => {
-    render(<Counter {...CounterProps} />);
+  it('화면에 텍스트가 보이는지', () => {
+    render(<Counter />);
 
     const text = screen.getByText('Counter'); // 정규표현식 사용 가능
     expect(text).toBeInTheDocument();
   });
 
-  test('증가 버튼을 클릭했을 때 onIncrease 함수가 실행되는지 테스트', () => {
-    render(<Counter {...CounterProps} />);
+  it('증가 버튼을 클릭했을 때 값이 증가하는지', async () => {
+    const { getByRole, getByText } = render(<Counter />);
+    const increaseButton = getByRole('button', { name: '증가' });
 
-    // getByRole: 컴포넌트에서 Element를 가져오는 메소드.
-    // button 태그의 name이 증가인 엘리먼트를 가져온다.
-    const button = screen.getByRole('button', { name: '증가' });
-    button.click();
-    expect(CounterProps.onIncrease).toHaveBeenCalled();
+    // count를 3번 증가시킴
+    await userEvent.click(increaseButton);
+    await userEvent.click(increaseButton);
+    await userEvent.click(increaseButton);
+
+    // count가 3인지 확인
+    expect(getByText('3')).toBeInTheDocument();
+
+    // .toHaveBeenCalledTimes(number) 몇번 실행되었는지  -> repeat test
   });
 });

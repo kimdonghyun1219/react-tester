@@ -1,10 +1,15 @@
-interface CounterProps {
-  count: number;
-  onIncrease: () => void;
-  onDecrease: () => void;
-}
+import { useState } from 'react';
 
-const Counter = ({ count, onIncrease, onDecrease }: CounterProps) => {
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const onIncrease = () => {
+    setCount((count) => count + 1);
+  };
+  const onDecrease = () => {
+    setCount((count) => count - 1);
+  };
+
   return (
     <div>
       <h1>Counter</h1>
@@ -12,7 +17,7 @@ const Counter = ({ count, onIncrease, onDecrease }: CounterProps) => {
       <button onClick={onDecrease}>감소</button>
       <h3>{count}</h3>
     </div>
-  )
-}
+  );
+};
 
 export default Counter;
